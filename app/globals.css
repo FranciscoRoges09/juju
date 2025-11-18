@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-primary-light: #fed7aa;
+  --color-secondary: #000000;
+  --color-secondary-light: #f3f4f6;
+  --color-accent: #ef4444;
+  --color-background: #ffffff;
+  --color-foreground: #1f2937;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #9ca3af;
+  --color-border: #e5e7eb;
+  --radius: 0.5rem;
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-foreground font-sans;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+a {
+  @apply text-primary hover:text-primary-dark;
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Utility Classes */
+.glass {
+  @apply bg-white/80 backdrop-blur-md;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+.shadow-lg-orange {
+  @apply shadow-lg shadow-primary/20;
+}
